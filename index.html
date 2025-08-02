@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Builder</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut voluptates itaque non voluptatem. Minus molestiae dolorum asperiores, adipisci recusandae modi placeat eos perspiciatis quia, non qui maiores consequuntur veritatis vel.</p>
-    
+  <div class="container">
+    <h1>Resume Builder</h1>
+    <form id="resumeForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="phone" placeholder="Phone" required />
+      <textarea id="summary" placeholder="Short Summary" required></textarea>
+
+      <label for="education">Education:</label>
+      <select id="education" required>
+        <option value="">-- Select Education --</option>
+        <option value="High School">High School</option>
+        <option value="Bachelor's Degree">Bachelor's Degree</option>
+        <option value="Master's Degree">Master's Degree</option>
+        <option value="PhD">PhD</option>
+      </select>
+
+      <label>Skills:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="skills" value="HTML" /> HTML</label>
+        <label><input type="checkbox" name="skills" value="CSS" /> CSS</label>
+        <label><input type="checkbox" name="skills" value="JavaScript" /> JavaScript</label>
+        <label><input type="checkbox" name="skills" value="Python" /> Python</label>
+        <label><input type="checkbox" name="skills" value="Java" /> Java</label>
+      </div>
+
+      <label>Experience:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="experience" value="Internship" /> Internship</label>
+        <label><input type="checkbox" name="experience" value="non" /> non</label>
+      </div>
+
+      <button type="submit">Create Resume</button>
+    </form>
+
+    <div id="resume" class="resume-template hidden">
+      <h2 id="r-name"></h2>
+      <p><strong>Email:</strong> <span id="r-email"></span></p>
+      <p><strong>Phone:</strong> <span id="r-phone"></span></p>
+      <p><strong>Education:</strong> <span id="r-education"></span></p>
+      <p><strong>Skills:</strong> <span id="r-skills"></span></p>
+      <p><strong>Experience:</strong> <span id="r-experience"></span></p>
+      <p><strong>Summary:</strong></p>
+      <p id="r-summary"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
